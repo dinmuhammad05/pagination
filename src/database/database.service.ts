@@ -7,11 +7,11 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
 
   async onModuleInit() {
     this.pool = new Pool({
-      user: 'postgres',
-      host: 'localhost',
-      database: 'miniapp',
-      password: 'password',
-      port: 5432,
+      user: process.env.DB_USERNAME,
+      host: process.env.DB_HOST,
+      database: process.env.DB_NAME,
+      password: process.env.DB_PASSWORD,
+      port: process.env.DB_PORT,
     });
 
     // Jadvallarni yaratish
